@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="en" xmlns="http://www.w3.org/2005/Atom" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:s="http://jadedpixel.com/-/spec/shopify">
+  <id>https://wagyushop.com/collections/all.atom</id>
+  <link rel="alternate" type="text/html" href="https://wagyushop.com/collections/all"/>
+  <link rel="self" type="application/atom+xml" href="https://wagyushop.com/collections/premium-seafood.atom"/>
+  <title>The Wagyu Shop</title>
+  <updated>2024-08-23T13:32:40-07:00</updated>
+  <author>
+    <name>The Wagyu Shop</name>
+  </author>
+  <entry>
+    <id>https://wagyushop.com/products/8111591817393</id>
+    <published>2024-08-23T13:32:40-07:00</published>
+    <updated>2024-08-23T13:32:40-07:00</updated>
+    <link rel="alternate" type="text/html" href="https://wagyushop.com/products/a5-and-seafood-appetizer"/>
+    <title>Land and Sea Pairing</title>
+    <s:type></s:type>
+    <s:vendor>The Wagyu Shop</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0012/4328/3505/files/Assortment1.png?v=1724426124"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>The Wagyu Shop<br>
+        <strong>Type: </strong><br>
+        <strong>Price: </strong>
+            189.00
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p><span data-mce-fragment="1">One (1) individually packaged 10 oz. <a href="https://wagyushop.com/collections/miyazakigyu-a5-wagyu-beef-from-miyazaki-prefecture/products/a5-miyazaki-wagyu-beef-ribeye-steak" title="Miyazakigyu Ribeye Steak" rel="noopener" target="_blank">Miyazakigyu Ribeye Steak</a> | Miyazaki Prefecture</span></p>
+<p><span data-mce-fragment="1">One (1) individually packaged  16 oz. <a href="https://wagyushop.com/collections/premium-seafood/products/tuna-saku-block" title="Yellowfin Tuna Saku Block" rel="noopener" target="_blank">Yellowfin Tuna Saku Block</a></span></p>
+<p><span data-mce-fragment="1">One (1) jar 1.59 oz. <a rel="noopener" title="Wasabi Salt" href="https://wagyushop.com/collections/salt-spice/products/wasabi-salt" target="_blank">Premium Wasabi Salt</a></span></p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://wagyushop.com/products/8111591817393</id>
+      <title>Default Title</title>
+      <s:price currency="USD">189.00</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://wagyushop.com/products/8111223013553</id>
+    <published>2024-08-23T13:29:57-07:00</published>
+    <updated>2024-08-23T13:29:57-07:00</updated>
+    <link rel="alternate" type="text/html" href="https://wagyushop.com/products/seafood-and-wasabi-assortment"/>
+    <title>Seafood and Wasabi Assortment</title>
+    <s:type></s:type>
+    <s:vendor>The Wagyu Shop</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0012/4328/3505/files/Assortment2.png?v=1724359031"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>The Wagyu Shop<br>
+        <strong>Type: </strong><br>
+        <strong>Price: </strong>
+            89.00
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p>One (1) package 16 oz. <a href="https://wagyushop.com/collections/premium-seafood/products/yellowfin-tuna-poke-cubes" title="Yellowfin Tuna Poke Cubes" rel="noopener" target="_blank">Yellowfin Tuna Poke Cubes</a> </p>
+<p>Two (2) individually packaged 8 oz.  <a href="https://wagyushop.com/collections/premium-seafood/products/ora-king-salmon-fillets" title="Ora King Salmon Fillets" rel="noopener" target="_blank">Ora King Salmon Fillets</a> </p>
+<p>One (1) package 1.48 oz.  <a href="https://wagyushop.com/collections/salt-spice/products/premium-grated-wasabi" target="_blank" title="Premium Grated Wasabi" rel="noopener">Premium Grated Wasabi</a></p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://wagyushop.com/products/8111223013553</id>
+      <title>Default Title</title>
+      <s:price currency="USD">89.00</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://wagyushop.com/products/8039126925489</id>
+    <published>2024-07-12T11:31:26-07:00</published>
+    <updated>2024-07-12T11:31:26-07:00</updated>
+    <link rel="alternate" type="text/html" href="https://wagyushop.com/products/wagyu-and-caviar-pairing"/>
+    <title>Caviar &amp; Cubes</title>
+    <s:type>American Wagyu</s:type>
+    <s:vendor>The Wagyu Shop</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0012/4328/3505/files/CubesCaviar1.png?v=1719435126"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>The Wagyu Shop<br>
+        <strong>Type: </strong>American Wagyu<br>
+        <strong>Price: </strong>
+            129.00
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p><span data-mce-fragment="1">Two (2) individual packages 6 oz. <a href="https://wagyushop.com/collections/american-wagyu-beef/products/natural-american-wagyu-beef-tenderloin-cubes-2-pkgs" target="_blank" title="American Wagyu Tenderloin Cubes" rel="noopener">Natural American Wagyu Tenderloin Cubes</a> | United States</span></p>
+<p><span data-mce-fragment="1">One (1) 1.75 oz. </span><a href="https://wagyushop.com/collections/caviar/products/kaluga-osetra-caviar" target="_blank" title="Kaluga Osetra Caviar" rel="noopener">Kaluga Osetra Caviar</a></p>
+<!----></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:variant>
+      <id>https://wagyushop.com/products/8039126925489</id>
+      <title>Default Title</title>
+      <s:price currency="USD">129.00</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://wagyushop.com/products/7228098937009</id>
+    <published>2022-06-01T08:45:54-07:00</published>
+    <updated>2022-06-01T08:45:54-07:00</updated>
+    <link rel="alternate" type="text/html" href="https://wagyushop.com/products/tuna-steaks"/>
+    <title>Yellowfin Tuna Steaks (2 pcs)</title>
+    <s:type>Seafood</s:type>
+    <s:vendor>The Wagyu Shop</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0012/4328/3505/products/TunaSteak1.png?v=1652980858"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>The Wagyu Shop<br>
+        <strong>Type: </strong>Seafood<br>
+        <strong>Price: </strong>
+            59.00
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p data-mce-fragment="1">Two (2) individually packaged Tuna Steaks.</p>
+<ul data-mce-fragment="1">
+<li data-mce-fragment="1">Sashimi Grade.</li>
+<li data-mce-fragment="1">Each steak is approximately 8 oz.</li>
+<li data-mce-fragment="1">Wild caught tuna.</li>
+<li data-mce-fragment="1">This product ships frozen.</li>
+<li>Seafood should be consumed 1-2 days after the product is thawed. Seafood should be consumed same day the package has been opened.</li>
+<li data-mce-fragment="1">SFIF Certified-Sustainable Fisheries Partnership.</li>
+<li data-mce-fragment="1">Ocean Wise recommended.</li>
+<li data-mce-fragment="1">Certified Sustainable Seafood under The Marine Stewardship Council.</li>
+<li data-mce-fragment="1">Fair Trade Certified.</li>
+<li>
+<span>View </span><a href="https://wagyushop.com/pages/shipping-delivery" target="_blank" data-mce-href="https://wagyushop.com/pages/shipping-delivery">Shipping Information</a><span> and select your desired delivery date at checkout.</span>
+</li>
+</ul>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Seafood</s:tag>
+    <s:variant>
+      <id>https://wagyushop.com/products/7228098937009</id>
+      <title>Default Title</title>
+      <s:price currency="USD">59.00</s:price>
+      <s:sku>2601102Z</s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://wagyushop.com/products/7228098412721</id>
+    <published>2022-06-01T08:44:49-07:00</published>
+    <updated>2022-06-01T08:44:49-07:00</updated>
+    <link rel="alternate" type="text/html" href="https://wagyushop.com/products/tuna-saku-block"/>
+    <title>Yellowfin Tuna Saku Block</title>
+    <s:type>Seafood</s:type>
+    <s:vendor>The Wagyu Shop</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0012/4328/3505/products/TunaSakuBlock1.png?v=1652980708"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>The Wagyu Shop<br>
+        <strong>Type: </strong>Seafood<br>
+        <strong>Price: </strong>
+            69.00
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p>One (1) individually packaged Tuna Saku Block.</p>
+<ul>
+<li>AAA Sashimi Grade.</li>
+<li>Each pack is approximately 1 lb.</li>
+<li>Wild caught tuna.</li>
+<li>This product ships frozen.</li>
+<li>Seafood should be consumed 1-2 days after the product is thawed. Seafood should be consumed same day the package has been opened.</li>
+<li>SFIF Certified-Sustainable Fisheries Partnership.</li>
+<li>Ocean Wise recommended.</li>
+<li>Certified Sustainable Seafood under The Marine Stewardship Council.</li>
+<li>Fair Trade Certified.</li>
+<li>
+<span>View </span><a href="https://wagyushop.com/pages/shipping-delivery" target="_blank" data-mce-href="https://wagyushop.com/pages/shipping-delivery">Shipping Information</a><span> and select your desired delivery date at checkout.</span>
+</li>
+</ul></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Seafood</s:tag>
+    <s:variant>
+      <id>https://wagyushop.com/products/7228098412721</id>
+      <title>Default Title</title>
+      <s:price currency="USD">69.00</s:price>
+      <s:sku>2601103Z</s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://wagyushop.com/products/7228060401841</id>
+    <published>2022-06-01T08:43:54-07:00</published>
+    <updated>2022-06-01T08:43:54-07:00</updated>
+    <link rel="alternate" type="text/html" href="https://wagyushop.com/products/yellowfin-tuna-poke-cubes"/>
+    <title>Yellowfin Tuna Poke Cubes</title>
+    <s:type>Seafood</s:type>
+    <s:vendor>The Wagyu Shop</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0012/4328/3505/products/TunaPokeCubes1.png?v=1652979101"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>The Wagyu Shop<br>
+        <strong>Type: </strong>Seafood<br>
+        <strong>Price: </strong>
+            49.00
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p>One (1) package of Tuna Poke Cubes.</p>
+<ul>
+<li>Sashimi Grade</li>
+<li>Each pack is approximately 1 lb.</li>
+<li>Wild caught tuna.</li>
+<li>This product ships frozen.</li>
+<li>Seafood should be consumed 1-2 days after the product is thawed. Seafood should be consumed same day the package has been opened.</li>
+<li>
+<span>View </span><a href="https://wagyushop.com/pages/shipping-delivery" target="_blank" data-mce-href="https://wagyushop.com/pages/shipping-delivery">Shipping Information</a><span> and select your desired delivery date at checkout.</span>
+</li>
+</ul>
+<p>Enjoy premium poke bowls in the comfort of your own home. Simply defrost the poke cubes, add your favorite sauce, seasoning, and toppings and enjoy with rice. Once the package is opened, it will be best to enjoy the product same day.</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Seafood</s:tag>
+    <s:variant>
+      <id>https://wagyushop.com/products/7228060401841</id>
+      <title>Default Title</title>
+      <s:price currency="USD">49.00</s:price>
+      <s:sku>2601101Z</s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://wagyushop.com/products/7228091269297</id>
+    <published>2022-06-01T08:42:16-07:00</published>
+    <updated>2022-06-01T08:42:16-07:00</updated>
+    <link rel="alternate" type="text/html" href="https://wagyushop.com/products/ora-king-salmon-fillets"/>
+    <title>Ora King Salmon Fillets (2 pcs)</title>
+    <s:type>Seafood</s:type>
+    <s:vendor>The Wagyu Shop</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0012/4328/3505/products/OraKingSalmon1.png?v=1652980257"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>The Wagyu Shop<br>
+        <strong>Type: </strong>Seafood<br>
+        <strong>Price: </strong>
+            49.00 - 59.00
+            <a href="https://wagyushop.com/products/ora-king-salmon-fillets">(2 variants)</a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p>Two (2) individually packaged Ora King Salmon Fillets.</p>
+<ul>
+<li>Skin-on fillet.</li>
+<li>Sustainably raised &amp; farmed in New Zealand.</li>
+<li>This product ships frozen.</li>
+<li>Seafood should be consumed 1-2 days after the product is thawed. Seafood should be consumed same day the package has been opened.</li>
+<li>Ocean Wise recommended.</li>
+<li>A+ New Zealand Sustainable Aquaculture.</li>
+<li>Monterey Bay Aquarium Seafood Watch Green.</li>
+<li>
+<span>View </span><a href="https://wagyushop.com/pages/shipping-delivery" data-mce-href="https://wagyushop.com/pages/shipping-delivery" target="_blank">Shipping Information</a><span> and select your desired delivery date at checkout.</span>
+</li>
+</ul>
+<p><br><br><br><br><br><br><br><br></p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Seafood</s:tag>
+    <s:variant>
+      <id>https://wagyushop.com/products/7228091269297</id>
+      <title>6 oz.</title>
+      <s:price currency="USD">49.00</s:price>
+      <s:sku>0601303Z-1</s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+    <s:variant>
+      <id>https://wagyushop.com/products/7228091269297</id>
+      <title>8 oz.</title>
+      <s:price currency="USD">59.00</s:price>
+      <s:sku>0601303Z-2</s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://wagyushop.com/products/7228081537201</id>
+    <published>2022-06-01T08:41:17-07:00</published>
+    <updated>2022-06-01T08:41:17-07:00</updated>
+    <link rel="alternate" type="text/html" href="https://wagyushop.com/products/chilean-sea-bass"/>
+    <title>Chilean Sea Bass Fillets (2 pcs)</title>
+    <s:type>Seafood</s:type>
+    <s:vendor>The Wagyu Shop</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0012/4328/3505/products/ChileanSeaBass1.png?v=1652979800"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>The Wagyu Shop<br>
+        <strong>Type: </strong>Seafood<br>
+        <strong>Price: </strong>
+            89.00
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p>Two (2) individually packaged Chilean Sea Bass Fillets.</p>
+<ul>
+<li>Each fillet is approximately 8 oz.</li>
+<li>Skin-off fillet.</li>
+<li>Wild caught Chilean Sea Bass, also known as Patagonian toothfish.</li>
+<li>Origin: Chile</li>
+<li>This product ships frozen.</li>
+<li>Seafood should be consumed 1-2 days after the product is thawed. Seafood should be consumed same day the package has been opened.</li>
+<li>Certified Sustainable by The Commission for the Conservation of Antarctic Marine Living Resources (CCAMLR) and the National Oceanic Atmospheric Administration (NOAA) via Dissostichus Catch Documents (DCD).</li>
+<li>
+<span>View </span><a href="https://wagyushop.com/pages/shipping-delivery" data-mce-href="https://wagyushop.com/pages/shipping-delivery" target="_blank">Shipping Information</a><span> and select your desired delivery date at checkout.</span>
+</li>
+</ul>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p> </p>
+</td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Seafood</s:tag>
+    <s:variant>
+      <id>https://wagyushop.com/products/7228081537201</id>
+      <title>Default Title</title>
+      <s:price currency="USD">89.00</s:price>
+      <s:sku>2601303Z</s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://wagyushop.com/products/7010263007409</id>
+    <published>2021-10-13T10:56:43-07:00</published>
+    <updated>2021-10-13T10:56:43-07:00</updated>
+    <link rel="alternate" type="text/html" href="https://wagyushop.com/products/premium-caviar-assortment"/>
+    <title>Premium Caviar Assortment</title>
+    <s:type>Caviar</s:type>
+    <s:vendor>The Wagyu Shop</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0012/4328/3505/products/CaviarAssortment.png?v=1634147749"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>The Wagyu Shop<br>
+        <strong>Type: </strong>Caviar<br>
+        <strong>Price: </strong>
+            549.00
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p>Taste an assortment of caviar side by side.</p>
+<p>One (1) 1.75 oz. <a href="https://wagyushop.com/collections/caviar/products/beluga-hybrid-caviar" title="Beluga Hybrid Caviar" target="_blank">Beluga Hybrid Caviar</a></p>
+<p>One (1) 1.75 oz. <a href="https://wagyushop.com/collections/caviar/products/kaluga-osetra-caviar" title="Kaluga Osetra Caviar" target="_blank">Kaluga Osetra Caviar</a></p>
+<p>One (1) 1.75 oz. <a href="https://wagyushop.com/collections/caviar/products/karat-russian-osetra" title="Karat Russian Osetra Caviar" target="_blank">Karat Russian Osetra Caviar</a></p>
+<p><span>View </span><a href="https://wagyushop.com/pages/shipping-delivery" target="_blank" data-mce-href="https://wagyushop.com/pages/shipping-delivery">Shipping Information</a><span> and select your desired delivery date at checkout.</span></p>
+<p><span>Pair your premium caviar with champagne, white wine or vodka to complement the natural flavor profiles. Savor this caviar on its own or incorporate it into a special dish.</span></p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Caviar</s:tag>
+    <s:variant>
+      <id>https://wagyushop.com/products/7010263007409</id>
+      <title>Default Title</title>
+      <s:price currency="USD">549.00</s:price>
+      <s:sku></s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://wagyushop.com/products/6749062856881</id>
+    <published>2021-06-04T08:17:02-07:00</published>
+    <updated>2021-06-04T08:17:02-07:00</updated>
+    <link rel="alternate" type="text/html" href="https://wagyushop.com/products/beluga-hybrid-caviar"/>
+    <title>Beluga Hybrid Caviar</title>
+    <s:type>Caviar</s:type>
+    <s:vendor>The Wagyu Shop</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0012/4328/3505/products/BelugaHybrid2.png?v=1622565698"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>The Wagyu Shop<br>
+        <strong>Type: </strong>Caviar<br>
+        <strong>Price: </strong>
+            389.00
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p>One (1) 1.75 oz. caviar jar.</p>
+<ul>
+<li>Large, firm beads.</li>
+<li>Charcoal grey color.</li>
+<li>Buttery &amp; rich flavor profile.</li>
+<li>Crossbred Beluga with Siberian Sturgeon.</li>
+<li>
+<span>View </span><a href="https://wagyushop.com/pages/shipping-delivery" target="_blank" data-mce-href="https://wagyushop.com/pages/shipping-delivery">Shipping Information</a><span> and select your desired delivery date at checkout.</span>
+</li>
+</ul>
+<p>Make any meal feel utterly decadent when you include Beluga Hybrid caviar from The Wagyu Shop. This exquisitely flavorful and luxurious product is sourced from Italy and comes from a crossbreed of Beluga and Siberian sturgeon. The large, firm beads have a charcoal gray color that look striking on any plate. With its buttery and rich flavor profile, every bite of this premium caviar is absolutely packed with a smooth, luscious taste. It's also an excellent source of vitamins A, E, B5 and B12 along with iron, magnesium and selenium.<br><br> Our Beluga Hybrid caviar can be enjoyed on its own or included as part of a dish to elevate the flavors and textures. It makes a wonderful accompaniment to a dish with our <a href="https://wagyushop.com/collections/all-products/a5-japanese-wagyu?sort_by=manual">authentic Japanese Wagyu</a> featuring a rich, melt-in-your-mouth taste. Pair with champagne, white wine or vodka to enhance the flavor profiles of this premium caviar.</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Caviar</s:tag>
+    <s:variant>
+      <id>https://wagyushop.com/products/6749062856881</id>
+      <title>Default Title</title>
+      <s:price currency="USD">389.00</s:price>
+      <s:sku>CAVIAR01</s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://wagyushop.com/products/6749068001457</id>
+    <published>2021-06-04T08:16:57-07:00</published>
+    <updated>2021-06-04T08:16:57-07:00</updated>
+    <link rel="alternate" type="text/html" href="https://wagyushop.com/products/kaluga-osetra-caviar"/>
+    <title>Kaluga Osetra Caviar</title>
+    <s:type>Caviar</s:type>
+    <s:vendor>The Wagyu Shop</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0012/4328/3505/products/Kaluga2.png?v=1622565932"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>The Wagyu Shop<br>
+        <strong>Type: </strong>Caviar<br>
+        <strong>Price: </strong>
+            109.00
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p data-mce-fragment="1">One (1) 1.75 oz. caviar jar.</p>
+<ul data-mce-fragment="1">
+<li data-mce-fragment="1">Large, firm beads.</li>
+<li data-mce-fragment="1">Amber/Dark green color.</li>
+<li data-mce-fragment="1">Rich flavor profile with concise finish.</li>
+<li>
+<span>View </span><a href="https://wagyushop.com/pages/shipping-delivery" data-mce-href="https://wagyushop.com/pages/shipping-delivery" target="_blank">Shipping Information</a><span> and select your desired delivery date at checkout</span>
+</li>
+</ul>
+<p data-mce-fragment="1">Discover an easy way to enjoy fine dining at home with Kaluga Osetra caviar from The Wagyu Shop. Sourced from Asia, this luxurious caviar features a captivating amber/dark green color that instantly creates a stunning plate. Compared to other types of caviar, Kaluga Osetra beads are particularly large and firm in texture. The rich flavor profiles are paired with a creamy taste and a concise finish to deliver a truly unforgettable dining experience.<br><br> When deciding on a beverage for your meal, keep in mind that the flavors and freshness of our Kaluga Osetra caviar are enhanced by champagne, white wine and vodka. This highly sought-after product is also a good source of iron, magnesium and selenium and is rich in vitamins A, E, B5 and B12. Enjoy this caviar on its own or treat yourself to an upscale meal by including it as addition to a dinner featuring our <a href="https://wagyushop.com/collections/all-products/a5-japanese-wagyu?sort_by=manual">luxurious Japanese Wagyu</a>.</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Caviar</s:tag>
+    <s:variant>
+      <id>https://wagyushop.com/products/6749068001457</id>
+      <title>Default Title</title>
+      <s:price currency="USD">109.00</s:price>
+      <s:sku>CAVIAR03</s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+  <entry>
+    <id>https://wagyushop.com/products/6749071966385</id>
+    <published>2021-06-04T08:15:16-07:00</published>
+    <updated>2021-06-04T08:15:16-07:00</updated>
+    <link rel="alternate" type="text/html" href="https://wagyushop.com/products/karat-russian-osetra"/>
+    <title>Karat Russian Osetra Caviar</title>
+    <s:type>Caviar</s:type>
+    <s:vendor>The Wagyu Shop</s:vendor>
+    <summary type="html">
+      <![CDATA[<table border="0">
+  <tr>
+    <td width="200"><img width="200" src="https://cdn.shopify.com/s/files/1/0012/4328/3505/products/Russian3.png?v=1622566115"></td>
+    <td valign="bottom">
+      <p>
+
+        <strong>Vendor: </strong>The Wagyu Shop<br>
+        <strong>Type: </strong>Caviar<br>
+        <strong>Price: </strong>
+            169.00
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><p data-mce-fragment="1">One (1) 1.75 oz. caviar jar.</p>
+<ul data-mce-fragment="1">
+<li data-mce-fragment="1">Medium-sized, firm beads.</li>
+<li data-mce-fragment="1">Golden brown color.</li>
+<li data-mce-fragment="1">Nutty flavor profile.</li>
+<li>
+<span>View </span><a href="https://wagyushop.com/pages/shipping-delivery" data-mce-href="https://wagyushop.com/pages/shipping-delivery" target="_blank">Shipping Information</a><span> and select your desired delivery date at checkout</span>
+</li>
+</ul>
+<p data-mce-fragment="1">Treat yourself to a luxurious dining experience with Karat Russian Osetra caviar from The Wagyu Shop. Sourced from the regions near the Caspian Sea, this premium caviar features optimal freshness and has a beautiful golden/brown color. It's rich in vitamins A, E, B5 and B12 and is a good source of magnesium, iron and selenium. The medium-size beads have a delightfully firm texture and a nutty flavor profile that can be enjoyed on its own or as part of an elegant meal. <br><br> This highly sought-after product can be shipped right to your door, making it easy to whip up a truly special meal to impress your guests or create a romantic dinner at home. Pair with champagne, white wine or vodka to enhance the delicious taste and consider including it as part of a meal with our tender, melt-in-your-mouth <a href="https://wagyushop.com/collections/all-products/a5-japanese-wagyu?sort_by=manual">Japanese Wagyu</a> to create a truly unforgettable dinner.</p></td>
+  </tr>
+</table>
+]]>
+    </summary>
+    <s:tag>Caviar</s:tag>
+    <s:variant>
+      <id>https://wagyushop.com/products/6749071966385</id>
+      <title>Default Title</title>
+      <s:price currency="USD">169.00</s:price>
+      <s:sku>CAVIAR02</s:sku>
+      <s:grams>0</s:grams>
+    </s:variant>
+  </entry>
+</feed>
