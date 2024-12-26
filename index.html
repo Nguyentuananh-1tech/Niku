@@ -15,14 +15,14 @@
   * license MIT (c) Dustin Diaz 2015
   * https://github.com/ded/reqwest
   */!function(){var o=window.Locksmith={},e=document.querySelector('script[type="application/vnd.locksmith+json"]'),n=e&&e.innerHTML;if(o.state={},o.util={},o.loading=!1,n)try{o.state=JSON.parse(n)}catch(u){}if(document.addEventListener&&document.querySelector){var s,r,a,t=[76,79,67,75,83,77,73,84,72,49,49],i=function(){r=t.slice(0)},l="style",c=function(e){e&&27!==e.keyCode&&"click"!==e.type||(document.removeEventListener("keydown",c),document.removeEventListener("click",c),s&&document.body.removeChild(s),s=null)};i(),document.addEventListener("keyup",function(e){if(e.keyCode===r[0]){if(clearTimeout(a),r.shift(),0<r.length)return void(a=setTimeout(i,1e3));i(),c(),(s=document.createElement("div"))[l].width="50%",s[l].maxWidth="1000px",s[l].height="85%",s[l].border="1px rgba(0, 0, 0, 0.2) solid",s[l].background="rgba(255, 255, 255, 0.99)",s[l].borderRadius="4px",s[l].position="fixed",s[l].top="50%",s[l].left="50%",s[l].transform="translateY(-50%) translateX(-50%)",s[l].boxShadow="0 2px 5px rgba(0, 0, 0, 0.3), 0 0 100vh 100vw rgba(0, 0, 0, 0.5)",s[l].zIndex="2147483645";var t=document.createElement("textarea");t.value=JSON.stringify(JSON.parse(n),null,2),t[l].border="none",t[l].display="block",t[l].boxSizing="border-box",t[l].width="100%",t[l].height="100%",t[l].background="transparent",t[l].padding="22px",t[l].fontFamily="monospace",t[l].fontSize="14px",t[l].color="#333",t[l].resize="none",t[l].outline="none",t.readOnly=!0,s.appendChild(t),document.body.appendChild(s),t.addEventListener("click",function(e){e.stopImmediatePropagation()}),t.select(),document.addEventListener("keydown",c),document.addEventListener("click",c)}})}o.isEmbedded=-1!==window.location.search.indexOf("_ab=0&_fd=0&_sc=1"),o.path=o.state.path||window.location.pathname,o.basePath=o.state.locale_root_url.concat("/apps/locksmith").replace(/^\/\//,"index.html"),o.reloading=!1,o.util.console=window.console||{log:function(){},error:function(){}},o.util.makeUrl=function(e,t){var n,s=o.basePath+e,r=[],a=o.cache();for(n in a)r.push(n+"="+encodeURIComponent(a[n]));for(n in t)r.push(n+"="+encodeURIComponent(t[n]));return o.state.customer_id&&(r.push("customer_id="+encodeURIComponent(o.state.customer_id)),r.push("customer_id_signature="+encodeURIComponent(o.state.customer_id_signature))),s+=(-1===s.indexOf("?")?"?":"&")+r.join("&")},o._initializeCallbacks=[],o.on=function(e,t){if("initialize"!==e)throw'Locksmith.on() currently only supports the "initialize" event';o._initializeCallbacks.push(t)},o.initializeSession=function(e){if(!o.isEmbedded){var t=!1,n=!0,s=!0;(e=e||{}).silent&&(s=n=!(t=!0)),o.ping({silent:t,spinner:n,reload:s,callback:function(){o._initializeCallbacks.forEach(function(e){e()})}})}},o.cache=function(e){var t={};try{var n=function r(e){return(document.cookie.match("(^|; )"+e+"=([^;]*)")||0)[2]};t=JSON.parse(decodeURIComponent(n("locksmith-params")||"{}"))}catch(u){}if(e){for(var s in e)t[s]=e[s];document.cookie="locksmith-params=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/",document.cookie="locksmith-params="+encodeURIComponent(JSON.stringify(t))+"; path=/"}return t},o.cache.cart=o.state.cart,o.cache.cartLastSaved=null,o.params=o.cache(),o.util.reload=function(){o.reloading=!0;try{window.location.href=window.location.href.replace(/#.*/,"")}catch(u){o.util.console.error("Preferred reload method failed",u),window.location.reload()}},o.cache.saveCart=function(e){if(!o.cache.cart||o.cache.cart===o.cache.cartLastSaved)return e?e():null;var t=o.cache.cartLastSaved;o.cache.cartLastSaved=o.cache.cart,reqwest({url:"/cart/update.json",method:"post",type:"json",data:{attributes:{locksmith:o.cache.cart}},complete:e,error:function(e){if(o.cache.cartLastSaved=t,!o.reloading)throw e}})},o.util.spinnerHTML='<style>body{background:#FFF}@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}#loading{display:flex;width:100%;height:50vh;color:#777;align-items:center;justify-content:center}#loading .spinner{display:block;animation:spin 600ms linear infinite;position:relative;width:50px;height:50px}#loading .spinner-ring{stroke:currentColor;stroke-dasharray:100%;stroke-width:2px;stroke-linecap:round;fill:none}</style><div id="loading"><div class="spinner"><svg width="100%" height="100%"><svg preserveAspectRatio="xMinYMin"><circle class="spinner-ring" cx="50%" cy="50%" r="45%"></circle></svg></svg></div></div>',o.util.clobberBody=function(e){document.body.innerHTML=e},o.util.clobberDocument=function(e){e.responseText&&(e=e.responseText),document.documentElement&&document.removeChild(document.documentElement);var t=document.open("text/html","replace");t.writeln(e),t.close(),setTimeout(function(){var e=t.querySelector("[autofocus]");e&&e.focus()},100)},o.util.serializeForm=function(e){if(e&&"FORM"===e.nodeName){var t,n,s={};for(t=e.elements.length-1;0<=t;t-=1)if(""!==e.elements[t].name)switch(e.elements[t].nodeName){case"INPUT":switch(e.elements[t].type){default:case"text":case"hidden":case"password":case"button":case"reset":case"submit":s[e.elements[t].name]=e.elements[t].value;break;case"checkbox":case"radio":e.elements[t].checked&&(s[e.elements[t].name]=e.elements[t].value);break;case"file":}break;case"TEXTAREA":s[e.elements[t].name]=e.elements[t].value;break;case"SELECT":switch(e.elements[t].type){case"select-one":s[e.elements[t].name]=e.elements[t].value;break;case"select-multiple":for(n=e.elements[t].options.length-1;0<=n;n-=1)e.elements[t].options[n].selected&&(s[e.elements[t].name]=e.elements[t].options[n].value)}break;case"BUTTON":switch(e.elements[t].type){case"reset":case"submit":case"button":s[e.elements[t].name]=e.elements[t].value}}return s}},o.util.on=function(e,a,o,t){t=t||document;var i="locksmith-"+e+a,n=function(e){var t=e.target,n=e.target.parentElement,s=t.className.baseVal||t.className||"",r=n.className.baseVal||n.className||"";("string"==typeof s&&-1!==s.split(/\s+/).indexOf(a)||"string"==typeof r&&-1!==r.split(/\s+/).indexOf(a))&&!e[i]&&(e[i]=!0,o(e))};t.attachEvent?t.attachEvent(e,n):t.addEventListener(e,n,!1)},o.util.enableActions=function(e){o.util.on("click","locksmith-action",function(e){e.preventDefault();var t=e.target;t.dataset.confirmWith&&!confirm(t.dataset.confirmWith)||(t.disabled=!0,t.innerText=t.dataset.disableWith,o.post("/action",t.dataset.locksmithParams,{spinner:!1,type:"text",success:function(e){(e=JSON.parse(e.responseText)).message&&alert(e.message),o.util.reload()}}))},e)},o.util.inject=function(e,t){var n=["data","locksmith","append"];if(-1!==t.indexOf(n.join("-"))){var s=document.createElement("div");s.innerHTML=t,e.appendChild(s)}else e.innerHTML=t;var r,a,o=e.querySelectorAll("script");for(a=0;a<o.length;++a){r=o[a];var i=document.createElement("script");if(r.type&&(i.type=r.type),r.src)i.src=r.src;else{var l=document.createTextNode(r.innerHTML);i.appendChild(l)}e.appendChild(i)}var c=e.querySelector("[autofocus]");c&&c.focus()},o.post=function(e,t,n){!1!==(n=n||{}).spinner&&o.util.clobberBody(o.util.spinnerHTML);var s={};n.container===document?(s.layout=1,n.success=function(e){document.getElementById(n.container);o.util.clobberDocument(e)}):n.container&&(s.layout=0,n.success=function(e){var t=document.getElementById(n.container);o.util.inject(t,e),t.id===t.firstChild.id&&t.parentElement.replaceChild(t.firstChild,t)}),n.form_type&&(t.form_type=n.form_type),o.loading=!0;var r=o.util.makeUrl(e,s);reqwest({url:r,method:"post",type:n.type||"html",data:t,complete:function(){o.loading=!1},error:function(e){if(!o.reloading)if("dashboard.weglot.com"!==window.location.host){if(!n.silent)throw alert("Something went wrong! Please refresh and try again."),e;console.error(e)}else console.error(e)},success:n.success||o.util.clobberDocument})},o.postResource=function(e,t){e.path=o.path,e.search=window.location.search,e.state=o.state,e.passcode&&(e.passcode=e.passcode.trim()),e.email&&(e.email=e.email.trim()),e.state.cart=o.cache.cart,e.locksmith_json=o.jsonTag,e.locksmith_json_signature=o.jsonTagSignature,o.post("/resource",e,t)},o.ping=function(e){if(!o.isEmbedded){e=e||{};var t=function(){e.reload?o.util.reload():"function"==typeof e.callback&&e.callback()};o.post("/ping",{path:o.path,search:window.location.search,state:o.state},{spinner:!!e.spinner,silent:"undefined"==typeof e.silent||e.silent,type:"text",success:function(e){(e=JSON.parse(e.responseText)).messages&&0<e.messages.length&&o.showMessages(e.messages),e.cart&&o.cache.cart!==e.cart?(o.cache.cart=e.cart,o.cache.saveCart(function(){t(),e.cart&&e.cart.match(/^.+:/)&&o.util.reload()})):t()}})}},o.timeoutMonitor=function(){var e=o.cache.cart;o.ping({callback:function(){e!==o.cache.cart||setTimeout(function(){o.timeoutMonitor()},6e4)}})},o.showMessages=function(e){var t=document.createElement("div");t.style.position="fixed",t.style.left=0,t.style.right=0,t.style.bottom="-50px",t.style.opacity=0,t.style.background="#191919",t.style.color="#ddd",t.style.transition="bottom 0.2s, opacity 0.2s",t.style.zIndex=999999,t.innerHTML="        <style>          .locksmith-ab .locksmith-b { display: none; }          .locksmith-ab.toggled .locksmith-b { display: flex; }          .locksmith-ab.toggled .locksmith-a { display: none; }          .locksmith-flex { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 10px 20px; }          .locksmith-message + .locksmith-message { border-top: 1px #555 solid; }          .locksmith-message a { color: inherit; font-weight: bold; }          .locksmith-message a:hover { color: inherit; opacity: 0.8; }          a.locksmith-ab-toggle { font-weight: inherit; text-decoration: underline; }          .locksmith-text { flex-grow: 1; }          .locksmith-cta { flex-grow: 0; text-align: right; }          .locksmith-cta button { transform: scale(0.8); transform-origin: left; }          .locksmith-cta > * { display: block; }          .locksmith-cta > * + * { margin-top: 10px; }          .locksmith-message a.locksmith-close { flex-grow: 0; text-decoration: none; margin-left: 15px; font-size: 30px; font-family: monospace; display: block; padding: 2px 10px; }                    @media screen and (max-width: 600px) {            .locksmith-wide-only { display: none !important; }            .locksmith-flex { padding: 0 15px; }            .locksmith-flex > * { margin-top: 5px; margin-bottom: 5px; }            .locksmith-cta { text-align: left; }          }                    @media screen and (min-width: 601px) {            .locksmith-narrow-only { display: none !important; }          }        </style>      "+e.map(function(e){return'<div class="locksmith-message">'+e+"</div>"}).join(""),document.body.appendChild(t),document.body.style.position="relative",document.body.parentElement.style.paddingBottom=t.offsetHeight+"px",setTimeout(function(){t.style.bottom=0,t.style.opacity=1},50),o.util.on("click","locksmith-ab-toggle",function(e){e.preventDefault();for(var t=e.target.parentElement;-1===t.className.split(" ").indexOf("locksmith-ab");)t=t.parentElement;-1!==t.className.split(" ").indexOf("toggled")?t.className=t.className.replace("toggled",""):t.className=t.className+" toggled"}),o.util.enableActions(t)}}()}();</script>
-      <script data-locksmith>Locksmith.cache.cart=null</script>
+     <!-- <script data-locksmith>Locksmith.cache.cart=null</script>
 
 
   <script data-locksmith>Locksmith.jsonTag="\u003cscript type=\"application\/vnd.locksmith+json\" data-locksmith\u003e{\"version\":\"v160\",\"locked\":false,\"initialized\":true,\"scope\":\"index\",\"access_granted\":true,\"access_denied\":false,\"requires_customer\":false,\"manual_lock\":false,\"remote_lock\":false,\"has_timeout\":false,\"remote_rendered\":null,\"hide_resource\":false,\"hide_links_to_resource\":false,\"transparent\":true,\"locks\":{\"all\":[],\"opened\":[]},\"keys\":[],\"keys_signature\":\"6d8df9060b1ab462c36fbb06f90e2f5dbb0d5ab704ec777ec39e06a09a8d7792\",\"state\":{\"template\":\"index\",\"theme\":139931254961,\"product\":null,\"collection\":null,\"page\":null,\"blog\":null,\"article\":null,\"app\":null},\"now\":1732155490,\"path\":\"\\\/\",\"locale_root_url\":\"\\\/\",\"canonical_url\":\"index.html\\\/\\\/wagyushop.com\\\/\",\"customer_id\":null,\"customer_id_signature\":\"6d8df9060b1ab462c36fbb06f90e2f5dbb0d5ab704ec777ec39e06a09a8d7792\",\"cart\":null}\u003c\/script\u003e";Locksmith.jsonTagSignature="81fcdb9d53c26e70d2ef814d4431517abe40442ff2cf4f0b4baf2d4d506f9ba0"</script>
-    <script src="" data-account="eWydzP15SG"></script>
+    <script src="" data-account="eWydzP15SG"></script>-->
     <!-- Start VWO Async SmartCode -->
 <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com/" />
-<script type='text/javascript' id='vwoCode'>
+<!--<script type='text/javascript' id='vwoCode'>
 window._vwo_code || (function() {
 var account_id=776530,
 version=2.0,
@@ -31,7 +31,7 @@ hide_element='body',
 hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important',
 /* DO NOT EDIT BELOW THIS LINE */
 f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(){if(!f){f=true;var e=d.getElementById('_vis_opt_path_hides');if(e)e.parentNode.removeChild(e)}},finished:function(){return f},load:function(e){var t=this.getSettings(),n=d.createElement('script'),i=this;if(t){n.textContent=t;d.getElementsByTagName('head')[0].appendChild(n);if(!w.VWO||VWO.caE){stT.removeItem(cK);i.load(e)}}else{n.fetchPriority='high';n.src=e;n.type='text/javascript';n.onerror=function(){_vwo_code.finish()};d.getElementsByTagName('head')[0].appendChild(n)}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t=d.currentScript,n=d.createElement('style'),i=this.hide_element(),r=t&&!t.async&&i?i+this.hide_element_style():'',c=d.getElementsByTagName('head')[0];n.setAttribute('id','_vis_opt_path_hides');v&&n.setAttribute('nonce',v.nonce);n.setAttribute('type','text/css');if(n.styleSheet)n.styleSheet.cssText=r;else n.appendChild(d.createTextNode(r));c.appendChild(n);this.load('https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&vn='+version)}};w._vwo_code=code;code.init();})();
-</script>
+</script>-->
 <!-- End VWO Async SmartCode -->
 
 
@@ -44,11 +44,11 @@ f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
     <meta name="theme-color" content="">
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<!--<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KCSM6VZZ');</script>
+})(window,document,'script','dataLayer','GTM-KCSM6VZZ');</script>-->
 <!-- End Google Tag Manager -->
     <title>
       Trang chủ
@@ -61,7 +61,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:description" content="Buy Japanese A5 Wagyu Beef imported directly from Japan. All Japanese Wagyu Beef comes with a Certificate of Authenticity in every order. Portioned A5 Japanese Wagyu Beef &amp; American Wagyu Beef shipped overnight. Imported A5 Wagyu, Domestic American Wagyu. Premium Quality. Superior Genetics. Impeccable Taste.">
 
 
-    <script>window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start');</script><meta name="facebook-domain-verification" content="rnamgftlw58i5tjcsycjg3kno0jle7">
+   <!-- <script>window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start');</script><meta name="facebook-domain-verification" content="rnamgftlw58i5tjcsycjg3kno0jle7">
 <meta id="shopify-digital-wallet" name="shopify-digital-wallet" content="/1243283505/digital_wallets/dialog">
 <meta name="shopify-checkout-api-token" content="3351834f80ccccb660f0957b575d2e88">
 <meta id="in-context-paypal-metadata" data-shop-id="1243283505" data-venmo-supported="true" data-environment="production" data-locale="en_US" data-paypal-v4="true" data-currency="USD">
@@ -89,8 +89,8 @@ window.ShopifyPay.apiHost = "shop.app\/pay";</script>
   window.Shopify = window.Shopify || {};
   if (!window.Shopify.featureAssets) window.Shopify.featureAssets = {};
   window.Shopify.featureAssets['shop-js'] = {"login-button":["modules/client.login-button_DStG0i4o.en.esm.js","modules/chunk.common_DCmY8Zac.esm.js"],"shop-pay-payment-request":["modules/client.shop-pay-payment-request_Baigg_vA.en.esm.js","modules/chunk.common_DCmY8Zac.esm.js","modules/client.login-button_DStG0i4o.en.esm.js","modules/chunk.shop-pay_Dgp_3uvF.esm.js"],"payment-terms":["modules/client.payment-terms_B6FTwZmj.en.esm.js","modules/chunk.common_DCmY8Zac.esm.js","modules/client.login-button_DStG0i4o.en.esm.js"],"pay-button":["modules/client.pay-button_D8dp9wxo.en.esm.js","modules/chunk.common_DCmY8Zac.esm.js"],"discount-app":["modules/client.discount-app_BHUzgLHf.en.esm.js","modules/chunk.common_DCmY8Zac.esm.js"],"avatar":["modules/client.avatar_BTnouDA3.en.esm.js"],"init-shop-for-new-customer-accounts":["modules/client.init-shop-for-new-customer-accounts_6oNoRvPJ.en.esm.js","modules/chunk.common_DCmY8Zac.esm.js","modules/client.login-button_DStG0i4o.en.esm.js"],"init-shop-email-lookup-coordinator":["modules/client.init-shop-email-lookup-coordinator_ZIyf0vSn.en.esm.js","modules/chunk.common_DCmY8Zac.esm.js"],"init-customer-accounts-sign-up":["modules/client.init-customer-accounts-sign-up_kkrGB-uH.en.esm.js","modules/chunk.common_DCmY8Zac.esm.js","modules/client.login-button_DStG0i4o.en.esm.js"],"init-customer-accounts":["modules/client.init-customer-accounts_BkPZy4P2.en.esm.js","modules/chunk.common_DCmY8Zac.esm.js","modules/client.login-button_DStG0i4o.en.esm.js"]};
-</script>
-<script>(function() {
+</script>-->
+<!--<script>(function() {
   function asyncLoad() {
     var urls = ["\/\/static.criteo.net\/js\/ld\/ld.js?shop=the-wagyu-shop.myshopify.com","index.html\/\/cdn-scripts.signifyd.com\/shopify\/script-tag.js?shop=the-wagyu-shop.myshopify.com","index.html\/\/omnisnippet1.com\/inShop\/Embed\/shopify.js?shop=the-wagyu-shop.myshopify.com","index.html\/\/static.rechargecdn.com\/assets\/js\/widget.min.js?shop=the-wagyu-shop.myshopify.com","index.html\/\/d1hcrjcdtouu7e.cloudfront.net\/js\/gdpr_cookie_consent.min.js?shop=the-wagyu-shop.myshopify.com","index.html\/\/cdn.giftship.app\/build\/storefront\/giftship.js?shop=the-wagyu-shop.myshopify.com","index.html\/\/cdn.shopify.com\/s\/files\/1\/0012\/4328\/3505\/t\/33\/assets\/subscribe-it.js?v=1667237854\u0026shop=the-wagyu-shop.myshopify.com","https:\/\/cdn.logbase.io\/lb-upsell-wrapper.js?shop=the-wagyu-shop.myshopify.com"];
     for (var i = 0; i < urls.length; i++) {
@@ -119,11 +119,11 @@ window.ShopifyPay.apiHost = "shop.app\/pay";</script>
   function portableWalletsHideBuyerConsent(e){var t=document.getElementById("shopify-buyer-consent"),n=document.getElementById("shopify-subscription-policy-button");t&&n&&(t.classList.add("hidden"),t.setAttribute("aria-hidden","true"),n.removeEventListener("click",e))}function portableWalletsShowBuyerConsent(e){var t=document.getElementById("shopify-buyer-consent"),n=document.getElementById("shopify-subscription-policy-button");t&&n&&(t.classList.remove("hidden"),t.removeAttribute("aria-hidden"),n.addEventListener("click",e))}window.Shopify?.PaymentButton&&(window.Shopify.PaymentButton.hideBuyerConsent=portableWalletsHideBuyerConsent,window.Shopify.PaymentButton.showBuyerConsent=portableWalletsShowBuyerConsent);
 </script>
 <script data-source-attribution="shopify.dynamic_checkout.cart.bootstrap">document.addEventListener("DOMContentLoaded",(function(){function t(){return document.querySelector("shopify-accelerated-checkout-cart, shopify-accelerated-checkout")}if(t())Shopify.PaymentButton.init();else{new MutationObserver((function(e,n){t()&&(Shopify.PaymentButton.init(),n.disconnect())})).observe(document.body,{childList:!0,subtree:!0})}}));
-</script>
+</script>-->
 
 
 
-<style id="shopify-accelerated-checkout-cart">
+<!--<style id="shopify-accelerated-checkout-cart">
         #dynamic-checkout-cart {
   container-type: inline-size;
   container-name: dcc;
@@ -409,9 +409,9 @@ window.ShopifyPay.apiHost = "shop.app\/pay";</script>
   box-shadow: none;
 }
 
-      </style>
+      </style>-->
 
-<style id="shopify-accelerated-checkout-cart-grid-with-margin-top">.additional-checkout-buttons--vertical .wallet-cart-grid .wallet-cart-button-container:first-child {
+    <!--<style id="shopify-accelerated-checkout-cart-grid-with-margin-top">.additional-checkout-buttons--vertical .wallet-cart-grid .wallet-cart-button-container:first-child {
   margin-top: 8px;
 }
 
@@ -461,10 +461,10 @@ window.ShopifyPay.apiHost = "shop.app\/pay";</script>
     margin-top: 8px;
   }
 }
-</style>
-<script>window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.end');</script>
+</style>-->
+<!--<script>window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.end');</script>-->
 
-    <link rel="stylesheet" href="../cdn/shop/t/57/assets/theme.scsse37e.css">
+    <link rel="stylesheet" href="/cdn/shop/t/57/assets/theme.scsse37e.css">
 
     <script>
       // This allows to expose several variables to the global scope, to be used in scripts
@@ -535,7 +535,7 @@ window.ShopifyPay.apiHost = "shop.app\/pay";</script>
     
     <!-- ECI: Start: Adword Base Code : 06-05-2020 -->
     <!-- Global site tag (gtag.js) - Google AdWords: 949755597-->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-949755597"></script>
+   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=AW-949755597"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -543,13 +543,13 @@ window.ShopifyPay.apiHost = "shop.app\/pay";</script>
 
       gtag('config', 'AW-949755597');
       gtag('config', 'G-RJ4GNDF8PF');
-    </script>
+    </script>-->
     <!-- ECI: END: Adword Base Code : 06-05-2020 -->
     
     
     
   
- <script defer>
+ <!--<script defer>
 
   /**
    * IMPORTANT!
@@ -617,7 +617,7 @@ window.ShopifyPay.apiHost = "shop.app\/pay";</script>
   }
   
 
-</script>
+</script>-->
 
 
 
@@ -635,7 +635,7 @@ window.ShopifyPay.apiHost = "shop.app\/pay";</script>
     // empty script tag to work around a platform issue where attributes of first script in file are scrubbed
 </script>
 
-<script id="bold-subscriptions-script" type="text/javascript">
+<!--<script id="bold-subscriptions-script" type="text/javascript">
     window.BOLD = window.BOLD || {};
     window.BOLD.subscriptions = window.BOLD.subscriptions || {};
     window.BOLD.subscriptions.classes = window.BOLD.subscriptions.classes || {};
@@ -1111,9 +1111,9 @@ window.ShopifyPay.apiHost = "shop.app\/pay";</script>
             form.submit();
         }
     };
-</script>
+</script>-->
 
-<script id="bold-subscriptions-platform-script" type="text/javascript">
+<!--<script id="bold-subscriptions-platform-script" type="text/javascript">
     window.BOLD.subscriptions.config.shopPlatformId = '1243283505';
     window.BOLD.subscriptions.config.appSlug = 'subscriptions';
 
@@ -1355,23 +1355,24 @@ window.ShopifyPay.apiHost = "shop.app\/pay";</script>
         request.send(formData);
     };
 
-    </script>
+    </script>-->
 
 
 
 <script src="../cdn.shopify.com/extensions/fb08020f-1d93-43d4-a30d-cf3ed0b9c486/selleasy-27/assets/lb-upsell.js" type="text/javascript" defer="defer"></script>
 <link href="https://monorail-edge.shopifysvc.com/" rel="dns-prefetch">
-<script>(function(){if ("sendBeacon" in navigator && "performance" in window) {var session_token = document.cookie.match(/_shopify_s=([^;]*)/);function handle_abandonment_event(e) {var entries = performance.getEntries().filter(function(entry) {return /monorail-edge.shopifysvc.com/.test(entry.name);});if (!window.abandonment_tracked && entries.length === 0) {window.abandonment_tracked = true;var currentMs = Date.now();var navigation_start = performance.timing.navigationStart;var payload = {shop_id: 1243283505,url: window.location.href,navigation_start,duration: currentMs - navigation_start,session_token: session_token && session_token.length === 2 ? session_token[1] : "",page_type: "index"};window.navigator.sendBeacon("https://monorail-edge.shopifysvc.com/v1/produce", JSON.stringify({schema_id: "online_store_buyer_site_abandonment/1.1",payload: payload,metadata: {event_created_at_ms: currentMs,event_sent_at_ms: currentMs}}));}}window.addEventListener('pagehide', handle_abandonment_event);}}());</script>
+<!--<script>(function(){if ("sendBeacon" in navigator && "performance" in window) {var session_token = document.cookie.match(/_shopify_s=([^;]*)/);function handle_abandonment_event(e) {var entries = performance.getEntries().filter(function(entry) {return /monorail-edge.shopifysvc.com/.test(entry.name);});if (!window.abandonment_tracked && entries.length === 0) {window.abandonment_tracked = true;var currentMs = Date.now();var navigation_start = performance.timing.navigationStart;var payload = {shop_id: 1243283505,url: window.location.href,navigation_start,duration: currentMs - navigation_start,session_token: session_token && session_token.length === 2 ? session_token[1] : "",page_type: "index"};window.navigator.sendBeacon("https://monorail-edge.shopifysvc.com/v1/produce", JSON.stringify({schema_id: "online_store_buyer_site_abandonment/1.1",payload: payload,metadata: {event_created_at_ms: currentMs,event_sent_at_ms: currentMs}}));}}window.addEventListener('pagehide', handle_abandonment_event);}}());</script>
 <script id="web-pixels-manager-setup">(function d(d,e,r,a,n){var o,i,t,s,l=(i=(o={modern:/Edge?\/(1{2}[4-9]|1[2-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|Firefox\/(1{2}[4-9]|1[2-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|Chrom(ium|e)\/(9{2}|\d{3,})\.\d+(\.\d+|)|(Maci|X1{2}).+ Version\/(15\.\d+|(1[6-9]|[2-9]\d|\d{3,})\.\d+)([,.]\d+|)( \(\w+\)|)( Mobile\/\w+|) Safari\/|Chrome.+OPR\/(9{2}|\d{3,})\.\d+\.\d+|(CPU[ +]OS|iPhone[ +]OS|CPU[ +]iPhone|CPU IPhone OS|CPU iPad OS)[ +]+(15[._]\d+|(1[6-9]|[2-9]\d|\d{3,})[._]\d+)([._]\d+|)|Android:?[ /-](12[89]|1[3-9]\d|[2-9]\d{2}|\d{4,})(\.\d+|)(\.\d+|)|Android.+Firefox\/(12[7-9]|1[3-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|Android.+Chrom(ium|e)\/(12[89]|1[3-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|SamsungBrowser\/([2-9]\d|\d{3,})\.\d+/,legacy:/Edge?\/(1[6-9]|[2-9]\d|\d{3,})\.\d+(\.\d+|)|Firefox\/(5[4-9]|[6-9]\d|\d{3,})\.\d+(\.\d+|)|Chrom(ium|e)\/(5[1-9]|[6-9]\d|\d{3,})\.\d+(\.\d+|)([\d.]+$|.*Safari\/(?![\d.]+ Edge\/[\d.]+$))|(Maci|X1{2}).+ Version\/(10\.\d+|(1[1-9]|[2-9]\d|\d{3,})\.\d+)([,.]\d+|)( \(\w+\)|)( Mobile\/\w+|) Safari\/|Chrome.+OPR\/(3[89]|[4-9]\d|\d{3,})\.\d+\.\d+|(CPU[ +]OS|iPhone[ +]OS|CPU[ +]iPhone|CPU IPhone OS|CPU iPad OS)[ +]+(10[._]\d+|(1[1-9]|[2-9]\d|\d{3,})[._]\d+)([._]\d+|)|Android:?[ /-](12[89]|1[3-9]\d|[2-9]\d{2}|\d{4,})(\.\d+|)(\.\d+|)|Mobile Safari.+OPR\/([89]\d|\d{3,})\.\d+\.\d+|Android.+Firefox\/(12[7-9]|1[3-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|Android.+Chrom(ium|e)\/(12[89]|1[3-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|Android.+(UC? ?Browser|UCWEB|U3)[ /]?(15\.([5-9]|\d{2,})|(1[6-9]|[2-9]\d|\d{3,})\.\d+)\.\d+|SamsungBrowser\/(5\.\d+|([6-9]|\d{2,})\.\d+)|Android.+MQ{2}Browser\/(14(\.(9|\d{2,})|)|(1[5-9]|[2-9]\d|\d{3,})(\.\d+|))(\.\d+|)|K[Aa][Ii]OS\/(3\.\d+|([4-9]|\d{2,})\.\d+)(\.\d+|)/}).modern,t=o.legacy,s=navigator.userAgent,i.test(s)?"modern":(t.test(s),"legacy"));window.Shopify=window.Shopify||{};var c=window.Shopify;c.analytics=c.analytics||{};var u=c.analytics;u.replayQueue=[],u.publish=function(d,e,r){return u.replayQueue.push([d,e,r]),!0};try{self.performance.mark("wpm:start")}catch(d){}var h=[r,"/wpm","/b",n,l.substring(0,1),".js"].join("");!function(d){var e=d.src,r=d.async,a=void 0===r||r,n=d.onload,o=d.onerror,i=document.createElement("script"),t=document.head,s=document.body;i.async=a,i.src=e,n&&i.addEventListener("load",n),o&&i.addEventListener("error",o),t?t.appendChild(i):s?s.appendChild(i):console.error("Did not find a head or body element to append the script")}({src:h,async:!0,onload:function(){var r=window.webPixelsManager.init(d);e(r);var a=window.Shopify.analytics;a.replayQueue.forEach((function(d){var e=d[0],a=d[1],n=d[2];r.publishCustomEvent(e,a,n)})),a.replayQueue=[],a.publish=r.publishCustomEvent,a.visitor=r.visitor},onerror:function(){var e=d.storefrontBaseUrl.replace(/\/$/,""),r="".concat(e,"/.well-known/shopify/monorail/unstable/produce_batch"),n=JSON.stringify({metadata:{event_sent_at_ms:(new Date).getTime()},events:[{schema_id:"web_pixels_manager_load/3.1",payload:{version:a||"latest",bundle_target:l,page_url:self.location.href,status:"failed",surface:d.surface,error_msg:"".concat(h," has failed to load")},metadata:{event_created_at_ms:(new Date).getTime()}}]});try{if(self.navigator.sendBeacon.bind(self.navigator)(r,n))return!0}catch(d){}var o=new XMLHttpRequest;try{return o.open("POST.html",r,!0),o.setRequestHeader("Content-Type","text/plain"),o.send(n),!0}catch(d){console&&console.warn&&console.warn("[Web Pixels Manager] Got an unhandled error while logging a load error.")}return!1}})})({shopId: 1243283505,storefrontBaseUrl: "https://wagyushop.com",extensionsBaseUrl: "https://extensions.shopifycdn.com/cdn/shopifycloud/web-pixels-manager",surface: "storefront-renderer",enabledBetaFlags: [],webPixelsConfigList: [{"id":"543293617","configuration":"{\"accountID\":\"selleasy-metrics-track\"}","eventPayloadVersion":"v1","runtimeContext":"STRICT","scriptVersion":"f86c42df4e9f256a1571f5d4b296f7e1","type":"APP","apiClientId":5519923,"privacyPurposes":["ANALYTICS","MARKETING","SALE_OF_DATA"]},{"id":"541458609","configuration":"{\"config\":\"{\\\"pixel_id\\\":\\\"G-RJ4GNDF8PF\\\",\\\"gtag_events\\\":[{\\\"type\\\":\\\"purchase\\\",\\\"action_label\\\":\\\"G-RJ4GNDF8PF\\\"},{\\\"type\\\":\\\"page_view\\\",\\\"action_label\\\":\\\"G-RJ4GNDF8PF\\\"},{\\\"type\\\":\\\"view_item\\\",\\\"action_label\\\":\\\"G-RJ4GNDF8PF\\\"},{\\\"type\\\":\\\"search\\\",\\\"action_label\\\":\\\"G-RJ4GNDF8PF\\\"},{\\\"type\\\":\\\"add_to_cart\\\",\\\"action_label\\\":\\\"G-RJ4GNDF8PF\\\"},{\\\"type\\\":\\\"begin_checkout\\\",\\\"action_label\\\":\\\"G-RJ4GNDF8PF\\\"},{\\\"type\\\":\\\"add_payment_info\\\",\\\"action_label\\\":\\\"G-RJ4GNDF8PF\\\"}],\\\"enable_monitoring_mode\\\":false}\"}","eventPayloadVersion":"v1","runtimeContext":"OPEN","scriptVersion":"afe7c2de16587d6c6689522527d6c67f","type":"APP","apiClientId":1780363,"privacyPurposes":[]},{"id":"193167537","configuration":"{\"pixel_id\":\"407584483195181\",\"pixel_type\":\"facebook_pixel\",\"metaapp_system_user_token\":\"-\"}","eventPayloadVersion":"v1","runtimeContext":"OPEN","scriptVersion":"8d894c63179843e74a9691414b5ad83d","type":"APP","apiClientId":2329312,"privacyPurposes":["ANALYTICS","MARKETING","SALE_OF_DATA"]},{"id":"125829297","configuration":"{\"appURL\":\"https:\/\/app.omnisend.com\",\"brandID\":\"5c4103448653ed7d78a03a48\",\"trackingURL\":\"https:\/\/wt.omnisendlink.com\"}","eventPayloadVersion":"v1","runtimeContext":"STRICT","scriptVersion":"3099e53cfd61847c4de2f403184e2938","type":"APP","apiClientId":186001,"privacyPurposes":["ANALYTICS","MARKETING","SALE_OF_DATA"]},{"id":"44204209","eventPayloadVersion":"1","runtimeContext":"LAX","scriptVersion":"1","type":"CUSTOM","privacyPurposes":["ANALYTICS","MARKETING","SALE_OF_DATA"],"name":"AGI Tracking Code"},{"id":"44236977","eventPayloadVersion":"1","runtimeContext":"LAX","scriptVersion":"3","type":"CUSTOM","privacyPurposes":["ANALYTICS","MARKETING","SALE_OF_DATA"],"name":"AGI Criteo Tracking Code"},{"id":"45646001","eventPayloadVersion":"1","runtimeContext":"LAX","scriptVersion":"8","type":"CUSTOM","privacyPurposes":["ANALYTICS","MARKETING","SALE_OF_DATA"],"name":"Bing Tracking"},{"id":"shopify-app-pixel","configuration":"{}","eventPayloadVersion":"v1","runtimeContext":"STRICT","scriptVersion":"0220","apiClientId":"shopify-pixel","type":"APP","privacyPurposes":["ANALYTICS","MARKETING"]},{"id":"shopify-custom-pixel","eventPayloadVersion":"v1","runtimeContext":"LAX","scriptVersion":"0220","apiClientId":"shopify-pixel","type":"CUSTOM","privacyPurposes":["ANALYTICS","MARKETING"]}],isMerchantRequest: false,initData: {"shop":{"name":"The Wagyu Shop","paymentSettings":{"currencyCode":"USD"},"myshopifyDomain":"the-wagyu-shop.myshopify.com","countryCode":"US","storefrontUrl":"https:\/\/wagyushop.com"},"customer":null,"cart":null,"checkout":null,"productVariants":[],"purchasingCompany":null},},function pageEvents(webPixelsManagerAPI) {webPixelsManagerAPI.publish("page_viewed", {});},"cdn.html","c56590fa1676c740228d74bb9b1cb2286ec5b6c3","260c1ab1w2bfcdd48p6e405a50mb822c730",);</script>  <script>window.ShopifyAnalytics = window.ShopifyAnalytics || {};
 window.ShopifyAnalytics.meta = window.ShopifyAnalytics.meta || {};
 window.ShopifyAnalytics.meta.currency = 'USD';
 var meta = {"page":{"pageType":"home"}};
 for (var attr in meta) {
   window.ShopifyAnalytics.meta[attr] = meta[attr];
-}</script>
-<script>window.ShopifyAnalytics.merchantGoogleAnalytics = function() {
-  ga('send', 'event', [eventCategory], [eventAction], [eventLabel], [eventValue], [fieldsObject])
+}</script>-->
 <!-- Global site tag (gtag.js) - Google AdWords: 949755597-->
+<!--<script>window.ShopifyAnalytics.merchantGoogleAnalytics = function() {
+  ga('send', 'event', [eventCategory], [eventAction], [eventLabel], [eventValue], [fieldsObject])
+
 
 
   window.dataLayer = window.dataLayer || [];
@@ -1380,8 +1381,8 @@ for (var attr in meta) {
 
   gtag('config', 'AW-949755597');
 };
-</script>
-<script class="analytics">(window.gaDevIds=window.gaDevIds||[]).push('BwiEti');
+</script>-->
+<!--<script class="analytics">(window.gaDevIds=window.gaDevIds||[]).push('BwiEti');
 
 
 (function () {
@@ -1575,16 +1576,16 @@ for (var attr in meta) {
         eventsListenerScript.src = "cdn/shopifycloud/shopify/assets/shop_events_listener-61fa9e0a912c675e178777d2b27f6cbd482f8912a6b0aa31fa3515985a8cd626.js";
         document.getElementsByTagName('head')[0].appendChild(eventsListenerScript);
 
-})();</script>
-<script class="boomerang">
+})();</script>-->
+<!--<script class="boomerang">
 (function () {
   window.BOOMR = window.BOOMR || {};
   window.BOOMR.themeName = "Prestige";
   window.BOOMR.themeVersion = "2.0.5";
   window.BOOMR.shopId = 1243283505;
   window.BOOMR.themeId = 139931254961;
-})();</script>
-<script
+})();</script>-->
+<!--<script
   defer
   src="cdn/shopifycloud/perf-kit/shopify-perf-kit-1.0.1.min.js"
   data-application="storefront-renderer"
@@ -1594,7 +1595,7 @@ for (var attr in meta) {
   data-theme-instance-id="139931254961"
   data-monorail-region="shop_domain"
   data-resource-timing-sampling-rate="10"
-></script>
+></script>-->
 </head>
 
   <body class="prestige--v2  template-index">
@@ -2530,14 +2531,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <!-- "snippets/smile-initializer.liquid" was not rendered, the associated app was uninstalled -->
     
       <!--  Clickcease.com tracking-->
-      <script type='text/javascript'>var script = document.createElement('script');
+      <!--<script type='text/javascript'>var script = document.createElement('script');
       script.async = true; script.type = 'text/javascript';
       var target = '../www.clickcease.com/monitor/stat.js';
       script.src = target;var elem = document.head;elem.appendChild(script);
       </script>
       <noscript>
       <a href='https://www.clickcease.com/' rel='nofollow'><img src='https://monitor.clickcease.com/stats/stats.aspx' alt='ClickCease'/></a>
-      </noscript>
+      </noscript>-->
       <!--  Clickcease.com tracking-->
 
 
@@ -2547,7 +2548,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
 (function(){
 
 function priceFromCents(cents) {
@@ -2606,7 +2607,7 @@ $(document).ajaxSuccess(function(event, xhr, settings) {
     }
 });
 })();
-</script>
+</script>-->
 
 
 <!-- CRITEO END -->
@@ -2616,7 +2617,7 @@ $(document).ajaxSuccess(function(event, xhr, settings) {
 <!-- /spurit_uev-added -->
 
 <!-- BEGIN: Google Customer Review by Simprosys InfoMedia For Any Assistance on this Code contact support@simprosys.com -->
-                <script src="../apis.google.com/js/platforme200.js?onload=renderBadge" async defer></script>
+              <!--  <script src="../apis.google.com/js/platforme200.js?onload=renderBadge" async defer></script>
                 <script>
                 window.renderBadge = function() {
                     var ratingBadgeContainer = document.createElement("div");
@@ -2634,11 +2635,11 @@ $(document).ajaxSuccess(function(event, xhr, settings) {
                 window.___gcfg = {
                     lang: "en_US"
                 };
-                </script>
+                </script>-->
                 <!-- END: Google Customer Review  by Simprosys InfoMedia-->
     <!-- ECI: Start: DRC : 06-05-2020-->
 
-    <script>
+    <!--<script>
   var aw_id='AW-949755597';
   var productIds = [];
   
@@ -2649,16 +2650,16 @@ $(document).ajaxSuccess(function(event, xhr, settings) {
 
   
 
-</script> 
+</script> -->
 
     <!-- ECI: END: DRC : 06-05-2020-->
 
 <!-- ECI:Script tags Start -->
-<script type ="application/ld+json" id ="eci-organization"></script>
+<!--<script type ="application/ld+json" id ="eci-organization"></script>-->
 <!--ECI: Script tags End -->
 
 <!--ECI: START JSONLD Schema Implementation -->
-<script type = "text/javascript">
+<!--<script type = "text/javascript">
 
 (function() {
     var ecia = setInterval( function() {
@@ -2711,11 +2712,11 @@ $(document).ajaxSuccess(function(event, xhr, settings) {
     }, 500 );
 })();
 
-</script>
+</script>-->
 <!--ECI: END JSONLD Schema Implementation -->
 
     <!--ECI START: UET Tag for Product Audiences, DO NOT DELETE, 8/13/2020 -->
-<script type="text/javascript">
+<!--<script type="text/javascript">
 var productIds = new Array();
 
 window.uetq = window.uetq || [];
@@ -2723,7 +2724,7 @@ window.uetq.push('event', '', {
 'ecomm_pagetype': 'home'
 });
 
-</script>
+</script>-->
 
 
 <!-- <script type="text/javascript">
@@ -2786,7 +2787,7 @@ if (theme.template === "cart") {
     
 </style>
 
-<script id="subscribe-it-helper">
+<!--<script id="subscribe-it-helper">
     var _SIConfig = _SIConfig || {};
 
     _SIConfig = {
@@ -2930,20 +2931,20 @@ if (theme.template === "cart") {
     head.appendChild(script);
   }
 })();
-</script>
+</script>-->
 
 
 <!--     ECI START GA4 enhanced ecommerce -->
 
-    <script>
+   <!-- <script>
     try {
         
     } catch (error) {
         
     }
-</script>
+</script>-->
 <!--     ECI END GA4 enhanced ecommerce -->
-<script type="text/javascript">
+<!--<script type="text/javascript">
 _linkedin_partner_id = "6484684";
 window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
 window._linkedin_data_partner_ids.push(_linkedin_partner_id);
@@ -2995,7 +2996,7 @@ s.parentNode.insertBefore(b, s);})(window.lintrk);
   </script>
 
 <script type="module" src="../cdn.shopify.com/extensions/fb08020f-1d93-43d4-a30d-cf3ed0b9c486/selleasy-27/assets/lb-upsell-components.esm.js" defer></script>
-
+-->
 </div></body>
 
 <!-- Mirrored from wagyushop.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Nov 2024 02:22:49 GMT -->
