@@ -5,7 +5,7 @@
       var styles = [];
       var fontPreconnectUrls = [];
       var fontPrefetchUrls = [];
-      var imgPrefetchUrls = ["https://cdn.shopify.com/s/files/1/0012/4328/3505/files/Wagyu_Shop_Revised_Logo_Inverse_x320.png?v=1704390465"];
+      var imgPrefetchUrls = ["https://cdn.shopify.com/s/files/1/0012/4328/3505/files/Wagyu_Shop_Revised_Logo_Inverse_x320.webp?v=1704390465"];
 
       function preconnect(url, callback) {
         var link = document.createElement('link');
