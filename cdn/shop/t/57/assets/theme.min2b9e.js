@@ -2162,7 +2162,7 @@ var _createClass = function() {
                 var e = this;
                 return new Promise(function(t, n) {
                     var i = document.createElement("script");
-                    document.body.appendChild(i), i.onload = t, i.onerror = n, i.async = !0, i.src = "youtube" === e.options.videoType ? "//www.youtube.com/iframe_api" : "//player.vimeo.com/api/player.js"
+                    // document.body.appendChild(i), i.onload = t, i.onerror = n, i.async = !0, i.src = "youtube" === e.options.videoType ? "//www.youtube.com/iframe_api" : "//player.vimeo.com/api/player.js"
                 })
             }
         }, {
