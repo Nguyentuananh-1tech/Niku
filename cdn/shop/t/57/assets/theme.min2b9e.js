@@ -1043,7 +1043,7 @@ var _createClass = function() {
             value: function(e, t) {
                 if (null === t) return e;
                 if ("master" === t) return e.replace(/http(s)?:/, "");
-                var n = e.match(/\.(jpg|jpeg|gif|webp|bmp|bitmap|tiff|tif)(\?v=\d+)?$/i);
+                var n = e.match(/\.(jpg|jpeg|gif|png|bmp|bitmap|tiff|tif)(\?v=\d+)?$/i);
                 if (n) {
                     var i = e.split(n[0]),
                         a = n[0];
